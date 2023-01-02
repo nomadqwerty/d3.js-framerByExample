@@ -1,0 +1,12 @@
+.d3div {
+  display: flex;
+}
+
+.bar {
+  background: #720570;
+  width: 150px;
+  margin-left: 50px;
+
+  position: relative;
+  left: 10%;
+}

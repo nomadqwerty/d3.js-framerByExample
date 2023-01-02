@@ -1,0 +1,12 @@
+select element, bind data to the element, enter method returns select elements that arent in dom, append element to fill missing elements, text to pass data to elements.
+.select(".para")
+    .data(dummy)
+    .enter()
+    .append("p")
+    .text((dta) => {
+      return dta.region;
+    });
+
+    //
+
+// style: target the class with classed('name', true), second arg is to specify if class should added
