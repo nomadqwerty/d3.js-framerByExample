@@ -1,0 +1,33 @@
+The heart of the animation in framer is the motion component, this is like a normal dom element but with animation capabilities. the motion component will use an animate prop/attribute.
+ie attach motion to the jsx element.
+<motion.div animate={{}}><motion.div/>
+
+animate attribute: this prop takes in an object. the object will be used  to animate css properties and framerMotion convienience properties
+
+convienience properties:
+1. (x and y): positional properties.
+2. scale: scale the size of element.
+3. rotateZ: rotate the element by a given degree.
+4. originX/Y: used to specify start origin
+
+
+initial Attribute: the initial attribute is used to specify the initial attributes or style of the element before the main animation attributes are then set. its like controlling the start of the animation to the end of the animation. initial attribute are used just like animate attributes.
+
+transition Attribute: this controls the time of the animation.
+transition properties
+1. delay: time before the animation
+2. duration: time of animate
+3. type: animation smoothness, ie spring, tween
+4. stiffness: works with spring type
+
+hover Attribute: this is used to animate on hover
+animate css properties and frmaer convienience properties
+
+
+Variants attribute: make it easy to put all attribute to one one object and for motion to reference.
+
+store all animation objects into one object.
+
+can even embed attributes.
+
+// stopped at lecture 7, 5 mins in. variants pt1

@@ -1,12 +1,16 @@
 import React from "react";
-import D3 from "./d3/D3";
-
+import Chart from "./d3/chart";
+import { VerticalBar } from "./d3/verticalBar";
 import "../comps/css/d3.css";
 
 const App = () => {
   return (
     <div>
-      <D3 />
+      {/* chart.js */}
+      <Chart />
+      <VerticalBar />
+
+      {/* framer motion */}
     </div>
   );
 };
