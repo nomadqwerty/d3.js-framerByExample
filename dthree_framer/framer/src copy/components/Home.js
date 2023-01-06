@@ -15,10 +15,17 @@ const Home = () => {
       </motion.h2>
       <Link to="/base">
         <motion.button
+          animate={{
+            x: [0, -20, 0, -20, 0, -20, 0],
+            transition: { duration: 0.4, delay: 1 },
+          }}
           whileHover={{
-            scale: 1.5,
+            scale: 1.3,
             textShadow: "0px 0px 8px rgb(255,255,255)",
             boxShadow: "0px 0px 8px rgb(255,255,255)",
+            transition: {
+              yoyo: Infinity,
+            },
           }}
         >
           Create Your Pizza

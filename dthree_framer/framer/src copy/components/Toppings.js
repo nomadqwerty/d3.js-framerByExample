@@ -12,8 +12,41 @@ const Toppings = ({ addTopping, pizza }) => {
     "tomatoes",
   ];
 
+  const toppingsVariants = {
+    init: { x: -1000 },
+    anime: {
+      x: 0,
+      // transition: {
+      //   type: "spring",
+      //   stiffness: 300,
+      //   duration: 0.1,
+      //   delay: 0.1,
+      // },
+    },
+  };
+  const nextVariants = {
+    whileHover: {
+      scale: 1.5,
+      textShadow: "0px 0px 8px rgb(255,255,255)",
+      boxShadow: "0px 0px 8px rgb(255,255,255)",
+    },
+    initial: { x: -1000 },
+    animate: {
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+      },
+    },
+  };
+
   return (
-    <div className="toppings container">
+    <motion.div
+      className="toppings container"
+      variants={toppingsVariants}
+      initial="init"
+      animate="anime"
+    >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
         {toppings.map((topping) => {
@@ -40,16 +73,15 @@ const Toppings = ({ addTopping, pizza }) => {
 
       <Link to="/order">
         <motion.button
-          whileHover={{
-            scale: 1.5,
-            textShadow: "0px 0px 8px rgb(255,255,255)",
-            boxShadow: "0px 0px 8px rgb(255,255,255)",
-          }}
+          variants={nextVariants}
+          initial="initial"
+          whileHover="whileHover"
+          animate="animate"
         >
           Order
         </motion.button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

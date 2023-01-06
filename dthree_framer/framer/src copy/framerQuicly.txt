@@ -30,4 +30,6 @@ store all animation objects into one object.
 
 can even embed attributes.
 
+variants also propagate attributes down to children. 
+it will inherit from the parent
 // stopped at lecture 7, 5 mins in. variants pt1

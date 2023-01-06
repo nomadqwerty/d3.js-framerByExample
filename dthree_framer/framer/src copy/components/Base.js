@@ -8,11 +8,38 @@ const Base = ({ addBase, pizza }) => {
     init: { x: -1000 },
     anime: {
       x: 0,
+      // transition: {
+      //   type: "spring",
+      //   stiffness: 300,
+      //   duration: 0.1,
+      //   delay: 0.1,
+      // },
+    },
+  };
+
+  const itemVariants = {
+    whileHover: {
+      scale: 1.5,
+      color: "#f8e112",
+      originX: 0,
       transition: {
         type: "spring",
         stiffness: 300,
-        duration: 0.1,
-        delay: 0.1,
+      },
+    },
+  };
+  const nextVariants = {
+    whileHover: {
+      scale: 1.5,
+      textShadow: "0px 0px 8px rgb(255,255,255)",
+      boxShadow: "0px 0px 8px rgb(255,255,255)",
+    },
+    initial: { x: -1000 },
+    animate: {
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
       },
     },
   };
@@ -29,15 +56,8 @@ const Base = ({ addBase, pizza }) => {
           let spanClass = pizza.base === base ? "active" : "";
           return (
             <motion.li
-              whileHover={{
-                scale: 1.5,
-                color: "#f8e112",
-                originX: 0,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-              }}
+              variants={itemVariants}
+              whileHover="whileHover"
               key={base}
               onClick={() => addBase(base)}
             >
@@ -48,22 +68,13 @@ const Base = ({ addBase, pizza }) => {
       </ul>
 
       {pizza.base && (
-        <motion.div
-          className="next"
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-          }}
-        >
+        <motion.div className="next">
           <Link to="/toppings">
             <motion.button
-              whileHover={{
-                scale: 1.5,
-                textShadow: "0px 0px 8px rgb(255,255,255)",
-                boxShadow: "0px 0px 8px rgb(255,255,255)",
-              }}
+              variants={nextVariants}
+              whileHover="whileHover"
+              initial="initial"
+              animate="animate"
             >
               Next
             </motion.button>
