@@ -46,6 +46,9 @@ const Toppings = ({ addTopping, pizza }) => {
       variants={toppingsVariants}
       initial="init"
       animate="anime"
+      exit={{
+        display: "none",
+      }}
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>

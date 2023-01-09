@@ -7,7 +7,9 @@ const Home = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ rotateZ: 360, marginTop: 200, opacity: 1 }}
-      transition={{ duration: 0.4, delay: 0.4 }}
+      exit={{
+        display: "none",
+      }}
       className="home container"
     >
       <motion.h2 animate={{ fontSize: 50, color: "aliceblue", y: -100 }}>

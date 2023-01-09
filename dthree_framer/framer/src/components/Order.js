@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 const orderVariants = {
   init: { x: -1000 },
   anime: {
@@ -21,26 +21,24 @@ const childvariants = {
   },
 };
 const Order = ({ pizza }) => {
-  const [showTitle, setShowTitle] = useState(true);
-  setTimeout(() => {
-    setShowTitle(false);
-  }, 2000);
   return (
     <motion.div
       className="container order"
       variants={orderVariants}
       initial="init"
       animate="anime"
+      exit={{
+        display: "none",
+      }}
     >
-      <AnimatePresence>
-        {showTitle && (
-          <motion.h2
-            exit={{ opacity: 0, transition: { delay: 2, duration: 1 } }}
-          >
-            Thank you for your order :)
-          </motion.h2>
-        )}
-      </AnimatePresence>
+      <motion.h2
+        initial={{
+          opacity: 1,
+        }}
+        animate={{ opacity: 0, transition: { delay: 2, duration: 1 } }}
+      >
+        Thank you for your order :)
+      </motion.h2>
       <motion.p variants={childvariants}>
         You ordered a {pizza.base} pizza with:
       </motion.p>

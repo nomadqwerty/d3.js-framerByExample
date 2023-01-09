@@ -19,11 +19,12 @@ transition properties
 2. duration: time of animate
 3. type: animation smoothness, ie spring, tween
 4. stiffness: works with spring type
+5. orchastration object: used to orchastration transition effects,
 
 hover Attribute: this is used to animate on hover
 animate css properties and frmaer convienience properties
 
-
+// variants
 Variants attribute: make it easy to put all attribute to one one object and for motion to reference.
 
 store all animation objects into one object.
@@ -32,4 +33,13 @@ can even embed attributes.
 
 variants also propagate attributes down to children. 
 it will inherit from the parent
-// stopped at lecture 7, 5 mins in. variants pt1
+
+
+// KeyFrames: are used to create animations or effects to happen a series of time. instead of specifying one value specify an array of  values to indicate different keyFrames.
+
+// repeating animations with yoyo transition effects, yoyo accent keyFrames arrays and infinity value.
+
+// animatePresent component: use to animate the presence of an element in the dom, before while and after. used more for exit animations, animate element off the page/dom.
+
+
+// router: by providing the switch with the location and key prop, then wrap the switch with animatePresent componenet.

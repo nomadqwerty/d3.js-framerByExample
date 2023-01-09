@@ -49,6 +49,9 @@ const Base = ({ addBase, pizza }) => {
       variants={baseVariants}
       initial="init"
       animate="anime"
+      exit={{
+        x: -1000,
+      }}
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
